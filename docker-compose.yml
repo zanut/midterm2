@@ -1,0 +1,44 @@
+version: '3'
+services:
+
+  video-streaming1:
+    image: video-streaming
+    build: 
+      context: ./video-streaming
+      dockerfile: Dockerfile
+    container_name: video-streaming1
+    ports:
+     - "3001:80"
+    environment:
+      - APP_NAME=video-streaming1
+      - PORT=80
+    restart: "no"
+    tty: true  # Keeps logs unbuffered
+
+  video-streaming2:
+    image: video-streaming
+    build: 
+      context: ./video-streaming
+      dockerfile: Dockerfile
+    container_name: video-streaming2
+    ports:
+     - "3002:80"
+    environment:
+      - APP_NAME=video-streaming2
+      - PORT=80
+    restart: "no"
+    tty: true  # Keeps logs unbuffered
+
+  video-streaming3:
+    image: video-streaming
+    build: 
+      context: ./video-streaming
+      dockerfile: Dockerfile
+    container_name: video-streaming3
+    ports:
+     - "3003:80"
+    environment:
+      - APP_NAME=video-streaming3
+      - PORT=80
+    restart: "no"
+    tty: true  # Keeps logs unbuffered
